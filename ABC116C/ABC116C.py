@@ -9,13 +9,13 @@ for i in range(M):
 ans = [None]*M
 # print(D) #[[(32, 0), (12, 2)], [(63, 1)]]
 
-for i, d in enumerate(D):
+for i, d in enumerate(D, 1):
     # print(i, d) #0 [(32, 0), (12, 2)], 1 [(63, 1)]
     # print(d) #[(32, 0), (12, 2)], [(63, 1)]
     d.sort()
     # print(d) #[(12, 2), (32, 0)], [(63, 1)]
     for k, (y,j) in enumerate(d):
-        ans[j] = str(i+1).zfill(6) + str(k+1).zfill(6)
+        ans[j] = str(i).zfill(6) + str(k+1).zfill(6)
 print(*ans, sep = "\n")
 
 #print(*ans)とすると，リストの要素がスペース区切りで出力される
